@@ -14,6 +14,57 @@ public abstract partial class CustomRotation
         internal bool InRole(JobRole role) => _roles.Contains(role);
     }
 
+      /// <summary>
+  /// 
+  /// </summary>
+  public static IBaseAction VariantRaise {
+    get;
+  } = new RoleAction(ActionID.VariantRaise, new JobRole[] {
+    JobRole.Melee,
+    JobRole.Tank,
+    JobRole.Ranged
+  },
+  ActionOption.Friendly);
+
+  /// <summary>
+  /// 
+  /// </summary>
+  public static IBaseAction VariantCure {
+    get;
+  } = new RoleAction(ActionID.VariantCure, new JobRole[] {
+    JobRole.Melee,
+    JobRole.Tank,
+    JobRole.Ranged
+  },
+  ActionOption.Heal);
+
+  /// <summary>
+  /// 
+  /// </summary>
+  public static IBaseAction VariantSpiritDart {
+    get;
+  } = new BaseAction(ActionID.VariantSpiritDart, new JobRole[] {
+    JobRole.Healer,
+    JobRole.Tank
+  },
+  ActionOption.Dot) {
+    TargetStatus = new StatusID[] {
+      StatusID.VariantSpiritDart
+    }
+  };
+
+  /// <summary>
+  /// 
+  /// </summary>
+  public static IBaseAction VariantRampart {
+    get;
+  } = new RoleAction(ActionID.VariantRampart, new JobRole[] {
+    JobRole.Melee,
+    JobRole.Healer,
+    JobRole.Ranged
+  },
+  ActionOption.Buff);
+
     /// <summary>
     /// 
     /// </summary>
