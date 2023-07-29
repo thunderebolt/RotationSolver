@@ -13,6 +13,7 @@ public abstract partial class CustomRotation
 
         internal bool InRole(JobRole role) => _roles.Contains(role);
     }
+    
 
     /// <summary>
     /// 
